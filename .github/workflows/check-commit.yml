@@ -29,6 +29,7 @@ jobs:
           pattern: '^(fix|chore|doc|spxike):\s+[A-Z]{4}-[0-9]+\s.*'
           flags: 'gm'
           error: 'Your first line has to contain a commit type like "[BUGFIX]".'
+          excludeTitle: 'true'
       - name: Check Line Length
         uses: gsactions/commit-message-checker@v1
         with:
