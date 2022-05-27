@@ -15,8 +15,8 @@ on:
   push:
     branches:
       - main
-      - test
-      - 'releases/*'
+      - develop
+      - 'feature/*'
 
 jobs:
   check-commit-message:
@@ -26,9 +26,9 @@ jobs:
       - name: Check Commit Type
         uses: gsactions/commit-message-checker@v1
         with:
-          pattern: '^(fix|chore|doc|spxike):\s+[A-Z]{4}-[0-9]+\s.*'
+          pattern: '^(fix|feat|chore|doc|spike):\s+.*$'
           flags: 'gm'
-          error: 'Your first line has to contain a commit type like "[BUGFIX]".'
+          error: 'Commit message must comply with conventional commits'
           excludeTitle: 'true'
           excludeDescription: 'true'
           checkAllCommitMessages: 'true' # optional: this checks all commits associated with a pull request
